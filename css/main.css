@@ -1,0 +1,200 @@
+* {
+    --main-color: #5fb2af;
+    --scolor: #d33;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.sz16 {
+    font-size: 16px;
+}
+
+
+p {
+    margin: 10px 0;
+    /* padding: 0; */
+}
+.fas {
+    opacity: 0.6;
+}
+.container {
+    padding: 15px 30px;
+    width: 90%;
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 10px auto;
+    gap: 20px;
+
+}
+
+.card1::before {
+    content: "Featured";
+    position: absolute;
+    color: white;
+    background-color: var(--scolor);
+    z-index: 1;
+    font-size: 17px;
+    width: 80px;
+    height: 25px;
+    display: flex;
+    left: -1px;
+    justify-content: center;
+    align-items: center;
+    top: -12.5px;
+}
+.card1::after {
+    content: "";
+    position: absolute;
+    top: -12.5px;
+    left: 79px;
+    border: solid 12.99px transparent;
+    border-left-color: var(--scolor);
+}
+.card {
+    position: relative;
+    background: white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border: var(--main-color) 1px solid;
+    border-radius: 5px;
+}
+.house {
+    width: 100%;
+    max-height: 250px;
+}
+.hot::before {
+    content: "hot";
+    position: absolute;
+    background: var(--scolor);
+    color: white;
+    left: 20px;
+    bottom: 20px;
+    width: 42px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    border-radius: 2px;
+}
+.image {
+    width: 100%;
+    position: relative;
+}
+.hearta {
+    position: absolute;
+    color: white;
+    bottom: 15px;
+    opacity: 1;
+    right: 70px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 200ms;
+}
+.hearta:hover {
+    color: red;
+}
+.arrow {
+    position: absolute;
+    color: white;
+    bottom: 15px;
+    opacity: 1;
+    right: 40px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 200ms;
+}
+.arrow:hover {
+    color: green;
+}
+
+.card > h3, .card > p, .card > div:not(.image) {
+    padding-left: 20px;
+    padding-right: 30px;
+}
+@media (max-width:768px) {
+    .card > h3, .card > p, .card > div:not(.image) {
+        padding-right: 0;
+    }
+
+}
+.description {
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 2em;
+}
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+.spec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.spec1 > p {
+    display: inline;
+}
+.details p {
+    font-size: 16px;
+}
+.price p:first-child {
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.spec1 span {
+    opacity: 0.6;
+    padding-right: 10px;
+}
+.spec p:first-child {
+    padding-bottom: 10px;
+    font-weight: bolder;
+}
+.price p:last-child {
+    font-weight: 700;
+    font-size: larger;
+    color: var(--main-color);
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 97%;
+    max-height: 250px;
+    opacity: 0%;
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms;
+}
+.butt {
+    background: transparent;
+    transition: 200ms;
+    border: white 1px solid;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 53px;
+    position: absolute;
+    left: 50%;
+    text-decoration: none;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.image:hover .butt {
+    opacity: 1;
+}
+.image:hover .overlay {
+    opacity: 70%;
+}
